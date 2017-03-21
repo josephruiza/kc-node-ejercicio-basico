@@ -1,0 +1,4 @@
+#Excluimos package.json y los ficheros de WebStorm 
+.idea
+servidor-basico/package.json
+
