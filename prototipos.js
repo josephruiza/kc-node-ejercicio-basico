@@ -16,3 +16,24 @@ Persona.prototype.saluda = function () {
 }
 
 persona.saluda();
+
+// --------------Heredando de persona---------------------- //
+
+function Agente(name) {
+    this.colorTraje = 'negro';
+    Persona.call(this, name);
+    //esto ejecuta el constructor de Persona con el this de Agente
+}
+
+Agente.prototype = new Persona('soy un prototipo');
+
+const smith = new Agente('Smith');
+
+smith.saluda();
+
+console.log(
+    Object.getPrototypeOf(smith),
+    smith instanceof Persona,
+    smith instanceof Agente,
+    smith instanceof Object
+);
