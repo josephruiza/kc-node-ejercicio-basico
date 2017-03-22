@@ -37,3 +37,19 @@ console.log(
     smith instanceof Agente,
     smith instanceof Object
 );
+
+// ------------------Herencia múltiple-------------------------- //
+
+function Superheroe() {
+    this.vuela = function() {
+        console.log(this.name + ' vuela');
+    };
+    this.esquivaBalas = function() {
+        console.log(this.name + ' esquiva balas');
+    }
+}
+
+Object.assign(Agente.prototype, new Superheroe());
+
+smith.vuela();
+smith.esquivaBalas();
