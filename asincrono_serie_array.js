@@ -15,13 +15,14 @@ function escribeTras2Segundos(texto, callback) {
 //llamar a una función n veces en serie
 // y al terminar llamar a un callback final
 function serieArray(arr, funcionALlamar, callbackFin){
-    if(arr.length==0){
+    if (arr.length == 0) {
         callbackFin();
+        // si no hay return se seguiria ejecutando
         return;
     }
-    var elemento = arr.pop;
-    funcionALlamar('texto'+ elemento, function () {
-        serieArray(serieArray,funcionALlamar, callbackFin);
+    var elemento = arr.pop();
+    funcionALlamar('texto' + elemento, function() {
+        serieArray(arr, funcionALlamar, callbackFin);
     });
 }
 
